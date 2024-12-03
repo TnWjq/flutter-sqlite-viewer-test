@@ -33,7 +33,7 @@ class _DataListState extends State<DataList> {
   Future<List?> _getValues() async {
     final db = await openDatabase(widget.databasePath);
 
-    if (widget.tableName.toLowerCase().contains('records') {
+    if (widget.tableName.toLowerCase().contains('records')) {
       return db.rawQuery('SELECT id, company_id, user_id, exchange, routing_key, created_at, sent_at, dispatch_at, retry, event_at, expires_at, priority, mime_type, atomic_id, atomic_ready FROM ${widget.tableName}');  
     }
     
